@@ -1,0 +1,38 @@
+{% set name = "mapmap" %}
+{% set version = "master" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://github.com/dthuerck/mapmap_cpu/archive/{{ version }}.tar.gz
+  sha256: 0103adbd053e360952df0fa731e41eb433319ff63c60ab04f2f6e5a55ec53490
+  patches:
+    - tbb.patch
+
+build:
+    number: 0
+
+requirements:
+  build:
+    # - {{ compiler("c") }}
+    # - {{ compiler("cxx") }}
+    - cmake
+    - ninja
+  host:
+    - gtest
+    - tbb-devel
+
+test:
+  commands:
+    - test -f $PREFIX/include/mapmap/full.h
+
+about:
+  home: https://github.com/dthuerck/mapmap_cpu
+  summary: A high-performance general-purpose MRF MAP solver, heavily exploiting SIMD instructions.
+
+extra:
+  recipe-maintainers:
+    - v-turin
