@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 771d1ef..fe31aed 100755
+index 771d1ef..8c7b07f 100755
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -15,8 +15,8 @@ option(BUILD_MEMSAVE "Use memory-saving mode. Might influence performance negati
@@ -13,3 +13,12 @@ index 771d1ef..fe31aed 100755
  
  # default to Release build and C++11 mode
  set(CMAKE_CXX_STANDARD 11)
+@@ -58,7 +58,7 @@ include_directories(
+     ${PROJECT_SOURCE_DIR}
+     ${PROJECT_SOURCE_DIR}/mapmap)
+ include_directories(SYSTEM
+-    ${TBB_INCLUDE_DIR})
++    ${TBB_INCLUDE_DIRS})
+ 
+ set(header_dir "mapmap/header")
+ set(impl_dir "mapmap/source")
