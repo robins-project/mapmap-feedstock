@@ -1,5 +1,5 @@
 {% set name = "mapmap" %}
-{% set version = "master" %}
+{% set version = "v1.5" %}
 
 package:
   name: {{ name }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/dthuerck/mapmap_cpu/archive/{{ version }}.tar.gz
-  sha256: 0103adbd053e360952df0fa731e41eb433319ff63c60ab04f2f6e5a55ec53490
+  sha256: b53db0f7e97c3c5a976e58ded3b66785c7fb0c3e5291a299469baa0dfea47863
   patches:
     - tbb.patch
 
